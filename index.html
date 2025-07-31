@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love Game</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #ffe6f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #popup, #finalMessage {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      padding: 30px;
+      text-align: center;
+      max-width: 400px;
+      display: none;
+    }
+
+    #popup.active, #finalMessage.active {
+      display: block;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    #yesBtn {
+      background-color: #ff66a3;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #cccccc;
+      color: white;
+      cursor: not-allowed;
+    }
+
+    #finalImage {
+      width: 250px;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+      border: 2px solid #ff99cc;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="popup" class="active">
+    <h2>Hi love 💕</h2>
+    <p>You miss me?</p>
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn" disabled>No</button>
+  </div>
+
+  <div id="finalMessage">
+    <h2>I miss you my love love ❤️</h2>
+    <img src="images/unnamed.webp">
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const popup = document.getElementById('popup');
+    const finalMessage = document.getElementById('finalMessage');
+
+    yesBtn.addEventListener('click', () => {
+      popup.classList.remove('active');
+      finalMessage.classList.add('active');
+    });
+  </script>
+
+</body>
+</html>
