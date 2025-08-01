@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love Letter Envelope</title>
+  <style>
+    body {
+      background: #f9d5c2;
+      font-family: 'Georgia', serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .envelope {
+      position: relative;
+      width: 600px;
+      height: 400px;
+      background: #f1c5b3;
+      border: 3px solid #b97a69;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      transition: all 0.5s ease-in-out;
+    }
+
+    .flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #d89079;
+      clip-path: polygon(50% 0%, 100% 50%, 0% 50%);
+      z-index: 2;
+      transition: transform 1s ease;
+    }
+
+    .letter {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 40px 30px;
+      background: #f4ecd8;
+      background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), 
+                        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 20px 20px;
+      color: #4b3a2d;
+      box-sizing: border-box;
+      transition: top 1s ease;
+      z-index: 1;
+      font-size: 18px;
+      line-height: 1.7;
+      overflow-y: auto;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.15);
+    }
+
+    .envelope.open .letter {
+      top: 0;
+    }
+
+    .envelope.open .flap {
+      transform: rotateX(180deg);
+      transform-origin: top;
+    }
+
+    button {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 24px;
+      background-color: #fff8f0;
+      border: 2px solid #b97a69;
+      border-radius: 25px;
+      cursor: pointer;
+      z-index: 3;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      color: #5a2c1c;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ffe6d8;
+    }
+  </style>
+</head>
+<body>
+  <div class="envelope" id="envelope">
+    <div class="flap"></div>
+    <div class="letter">
+      <p>Hey love, it's August!. New month, still you. Thank you for staying and I'm sorry for all my flaws.</p>
+      <p>There are so many things I want to say, but above all, I just want you to know that you matter deeply to me. I appreciate your patience, your presence, and the comfort you bring, even in silence.</p>
+      <p>This journey we’re on is far from perfect, but it's real and that makes it beautiful. I promise to keep growing with you, to learn from our mistakes, and to choose you in every version of time.</p>
+      <p>To the memories we've made so far the calls that went on too long, the times we stayed up just to feel a little closer, the way hearing your voice can calm everything down.</p>
+      <p>I know we’re far, and some days it gets hard… but somehow, loving you still feels so close.</p>
+      <p>Even without the touch, without the everyday moments, there’s this quiet strength between us. </p>
+      <p>We're learning to love in a way that doesn’t need to be loud just honest, patient, and real. </p>
+      <p>And I don’t know what tomorrow brings, but I do know this: you're worth every mile, every waiting moment, and every little ache that reminds me how much I care.</p>
+      <p>I'm still here. Always.</p>
+      <p>— Yours always AI❤️</p>
+    </div>
+    <button onclick="document.getElementById('envelope').classList.add('open')">Open</button>
+  </div>
+</body>
+</html>
